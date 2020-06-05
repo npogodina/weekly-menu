@@ -25,6 +25,19 @@ class FoodItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @food_item = FoodItem.find_by(id: params[:id])
+
+    if @food_item.nil?
+      head :not_found
+      return
+    end
+
+    @food_item.destroy
+    redirect_to food_items_path
+  end
+
+
   private
 
   def food_item_params

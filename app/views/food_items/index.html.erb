@@ -5,22 +5,18 @@
     <%= form_with model: @food_item, class: "form-row mb-5" do |f| %>
       
       <div class="col">
-        
         <%= f.text_field :name, class:"form-control", placeholder:"Food Name" %>
       </div>
 
-      <div class="col">
-        
+      <div class="col">  
         <%= f.text_field :category, class:"form-control", placeholder:"Category" %>
       </div>
 
       <div class="col">
-        
         <%= f.text_field :units, class:"form-control", placeholder:"Units" %>
       </div>
 
       <%= f.submit "Add this food!", class: "btn btn-primary" %>
-      
     <% end %>
   
 
@@ -28,6 +24,8 @@
     <thead class="thead-dark">
       <tr>
         <th scope="col">Name</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
         <th scope="col">Type</th>
         <th scope="col">Units</th>
       </tr>
@@ -37,6 +35,8 @@
         
           <tr class="list-group-item-action">
             <th scope="row"> <%= food_item.name %> </th>
+            <td> N/A </td>
+            <td> <%= link_to "Delete", food_item_path(food_item), method: :delete, class: "btn btn-danger" %></td>
             <td> <%= food_item.category %> </td>
             <td> <%= food_item.units %> 
           </tr>
