@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <h1>The Dishes:</h1>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Meal</th>
+        <th scope="col">Servings</th>
+        <th scope="col">Recipe?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @dishes.each do |dish| %>
+        
+          <tr class="list-group-item-action">
+            <th scope="row"> <%= dish.name %> </th>
+            <th scope="row"> <%= dish.meal %> </th>
+            <th scope="row"> <%= dish.servings %> </th>
+            <th scope="row"> 
+              <% if dish.recipe %>
+                Yes!
+              <% else %>
+                No
+              <% end %>
+            </th>
+          </tr>
+
+      <% end %> 
+    </tbody>
+  </table>
+</div>
