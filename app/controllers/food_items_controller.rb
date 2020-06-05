@@ -1,6 +1,6 @@
 class FoodItemsController < ApplicationController
   def index
-    @food_items = FoodItem.all
+    @food_items = FoodItem.order(:name)
     @food_item = FoodItem.new
   end
 
