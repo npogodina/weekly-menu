@@ -1,0 +1,39 @@
+<div class="container mt-5">
+  <h1>Add your dish!</h1>
+
+  <% if @dish.errors.any? %>
+    <ul class="errors">
+      <% @dish.errors.each do |column, message| %>
+        <li>
+          <strong><%= column.capitalize %></strong> <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= form_with model: @dish, class: "" do |f| %>
+    <p>Please provide the following information:</p>
+
+    <div class="form-group">
+      <%= f.label "Name" %>
+      <%= f.text_field :name, class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "Meal type:" %>
+      <%= f.select :meal, [nil, "Breakfast", "Lunch", "Dinner", "Snack"], {}, {class: "form-control"} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "Servings:" %>
+      <%= f.select :servings, [nil, 1, 2, 3, 4, 5, 6, 7, 8], {}, {class: "form-control"} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "Recipe:" %>
+      <%= f.text_area :recipe, class:"form-control", rows: 10 %>
+    </div>
+
+    <%= f.submit "Add dish", class: "btn btn-primary" %>
+  <% end %>
+</div>
