@@ -1,0 +1,20 @@
+<table class="table">
+  <thead class="">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Units</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @food_items.each do |food_item| %>
+      
+        <tr class="list-group-item-action">
+          <th scope="row"> <%= food_item.name %> </th>
+          <td> <%= food_item.type %> </td>
+          <td> <%= food_item.units %> 
+        </tr>
+
+    <% end %> 
+  </tbody>
+</table>
