@@ -1,6 +1,29 @@
 <div class="container mt-5">
   <h1>The Foods:</h1>
 
+  
+    <%= form_with model: @food_item, class: "form-row mb-5" do |f| %>
+      
+      <div class="col">
+        
+        <%= f.text_field :name, class:"form-control", placeholder:"Food Name" %>
+      </div>
+
+      <div class="col">
+        
+        <%= f.text_field :category, class:"form-control", placeholder:"Category" %>
+      </div>
+
+      <div class="col">
+        
+        <%= f.text_field :units, class:"form-control", placeholder:"Units" %>
+      </div>
+
+      <%= f.submit "Add this food!", class: "btn btn-primary" %>
+      
+    <% end %>
+  
+
   <table class="table">
     <thead class="thead-dark">
       <tr>
